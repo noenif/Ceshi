@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+    </style>
+</head>
+<body>
+<div id="app">
+    <current-user v-slot="usera">
+        {{ usera }}
+    </current-user>
+</div>
+
+
+</body>
+
+<script src="./src/vue.js"></script>
+
+<script>
+    Vue.component('current-user', {
+        template: `<span>
+  <slot :users="user">
+
+  </slot>
+</span>`,
+        data:function () {
+            return {
+                user:{
+                    firstName: 'jest',
+                    lastName:"zhang"
+                },
+                bin:{
+                    local:'sd'
+                }
+            }
+        }
+    })
+    var vm = new Vue({
+        el: '#app',
+        // data: {
+        //     user:{
+        //         firstName:"san",
+        //         lastName:"zhang"
+        //     }
+        // }
+    })
+</script>
+</html>
